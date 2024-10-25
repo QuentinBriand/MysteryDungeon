@@ -31,12 +31,12 @@ void move_up(wininf *inf, int off)
     }
 }
 
-void add_log(wininf *inf, char *msg, ...)
+void add_log(wininf *inf, const float font_size, char *msg, ...)
 {
     va_list ap; va_start(ap, msg);
     list *nl = malloc(sizeof(list));
     char *result = print_log(inf, msg, ap);
-    dline *line = load_line(result, FONT_SIZE, inf, malloc);
+    dline *line = load_line(result, font_size, inf, malloc);
     logline *nlog = malloc(sizeof(logline));
     nlog->line = line; nlog->alive = 1; nlog->time = 0.0f;
     sfVector2f view = sfView_getCenter(inf->camera.view);

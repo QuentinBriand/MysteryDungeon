@@ -20,8 +20,8 @@ char **load_csv(char *filename)
         array[i] = my_strdup(line, my_malloc);
     }
     array[lines] = 0;
-    fclose(f);
-    free(line);
+    if (line) free(line);
+    if (f) fclose(f);
     return array;
 }
 
@@ -33,7 +33,7 @@ int get_number_lines(char *filename)
     ssize_t read;
     int count = 0;
     for (; (read = getline(&line, &len, f)) != -1; count++);
-    fclose(f);
-    free(line);
+    if (line) free(line);
+    if (f) fclose(f);
     return count;
 }

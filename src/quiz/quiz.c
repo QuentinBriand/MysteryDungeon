@@ -51,7 +51,7 @@ void draw_quiz(wininf *inf, player *p)
         inf->c_scene = HOME;
     }
     if (inf->quiz->destroy == 1) {
-        char **csv = load_csv("./csv/quiz_choices.csv");
+        char **csv = load_csv(rootPath"/csv/quiz_choices.csv");
         inf->quiz->tendance = chose_tendance(inf);
         inf->settings->pokemon = chose_line(csv, inf->quiz->tendance,
         inf->quiz->addptsnature[13] ? 1 : 0);

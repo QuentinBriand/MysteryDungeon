@@ -58,8 +58,17 @@ wininf create_window_infos(int ac, char **av)
 {
     srand(time(0)); wininf inf; inf.lang = ENGLISH;
     inf.settings = init_settings(); inf.net = init_network();
-    get_settings_flags(ac, av, &inf); inf.mode = (sfVideoMode){1920, 1080, 32};
-    inf.win = sfRenderWindow_create(inf.mode, WINDOW_NAME, sfClose, NULL);
+//    // get_settings_flags(ac, av, &inf);
+    inf.mode = (sfVideoMode){1920, 1080, 32};
+    sfContextSettings settings = {
+        .depthBits = 24,
+        .stencilBits = 8,
+        .antialiasingLevel = 4,
+        .majorVersion = 4,
+        .minorVersion = 0,
+    };
+    inf.win = sfRenderWindow_create(inf.mode, WINDOW_NAME, sfClose, &settings);
+    
     sfRenderWindow_setPosition(inf.win, (sfVector2i) {0, 0});
     first_fill_window(&inf); inf.change_scene = 0;
     dungeon d; d.in = 0; d.enemies = 0; d.floor = 1; d.ended = 0;

@@ -5,7 +5,6 @@
 ** Putchar
 */
 
-#include <unistd.h>
 #include "../printf.h"
 
 int my_putchar_disp(FILE *file, char *c)

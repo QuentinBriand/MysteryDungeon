@@ -43,9 +43,9 @@ int check_scene(wininf *inf)
 {
     if (inf->c_scene != DUNGEON) {
         if (inf->lang == ENGLISH)
-            add_log(inf, "You can't drop an item here.\n");
+            add_log(inf, FONT_SIZE, "You can't drop an item here.\n");
         else
-            add_log(inf, "Vous ne pouvez pas jeter d'objet ici.\n");
+            add_log(inf, FONT_SIZE, "Vous ne pouvez pas jeter d'objet ici.\n");
         return - 1;
     }
     return 1;
@@ -59,7 +59,7 @@ void drop_item(wininf *inf, player *p)
     d->data = get_item_sprite(d->id, inf, p, 1); d->dropped = 1;
     char **arr = my_strtwa(inf->atlases.items[d->id], ";\n");
     push_back(&inf->d_items, d);
-    add_log(inf, "%s %s <i_l%s>\n", inf->lang ? "Vous avez jete" :
+    add_log(inf, FONT_SIZE, "%s %s <i_l%s>\n", inf->lang ? "Vous avez jete" :
     "You dropped", arr[0], trim(my_strdup(arr[0], my_malloc), ' '));
     free(inf->ig_slots[inf->slot_id]->steps);
     inf->ig_slots[inf->slot_id] = update_ig_choice(inf->lang ? "Vide" :

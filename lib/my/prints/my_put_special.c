@@ -24,6 +24,7 @@ int my_put_specialarg(char str)
         my_putchar_disp(0, &backslash);
         my_putnbr_oct(str);
     }
+    return 0;
 }
 
 int my_put_special(char *str)
@@ -35,4 +36,5 @@ int my_put_special(char *str)
             my_putchar(str[counter]);
         }
     }
+    return 0;
 }

@@ -16,7 +16,7 @@ void set_volume_musics(wininf *inf, int volume)
 s_sounds *init_sounds(void)
 {
     s_sounds *sounds = my_malloc(sizeof(s_sounds));
-    char **csvsounds = load_csv("./csv/sounds.csv");
+    char **csvsounds = load_csv(rootPath"/csv/sounds.csv");
     for (int i = 1, j = 0; csvsounds[i] != NULL && j < COUNTSOUNDS; i++, j++) {
         char **actualsound = my_strtwa(csvsounds[i], ";\n");
         sounds->sound_buffer[j] = my_buffer_from_file(actualsound[0]);

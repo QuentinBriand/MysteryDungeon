@@ -12,5 +12,5 @@ void manage_help(void)
     char **help = load_csv("./txt/help.txt");
     for (int i = 0; help[i] != NULL; i++)
         my_putstr(help[i]);
-    my_malloc(0);
+    my_malloc(0);   
 }

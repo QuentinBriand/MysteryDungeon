@@ -6,8 +6,6 @@
 */
 
 #include "rpg.h"
-#include <getopt.h>
-#include <unistd.h>
 
 void manage_fps(char *arg, wininf *inf)
 {

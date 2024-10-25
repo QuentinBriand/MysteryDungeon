@@ -9,7 +9,7 @@
 
 void set_backs_menu(wininf *inf)
 {
-    char **csvbackmenus = load_csv("./csv/back_menus.csv");
+    char **csvbackmenus = load_csv(rootPath"/csv/back_menus.csv");
     for (int i = 1, j = 0; i < 4; i++, j++) {
         char **back = my_strtwa(csvbackmenus[i], ";\n");
         sfIntRect rect = {my_atoi(back[1]), my_atoi(back[2]),

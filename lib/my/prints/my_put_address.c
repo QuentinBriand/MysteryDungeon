@@ -34,5 +34,5 @@ int my_put_address(unsigned int str)
 {
     my_putchar('0');
     my_putchar('x');
-    my_putnbr_hexaaddress(str);
+    return my_putnbr_hexaaddress(str);
 }

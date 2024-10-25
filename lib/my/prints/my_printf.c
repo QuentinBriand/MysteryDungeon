@@ -62,6 +62,7 @@ int my_fprintf_log(FILE *file, char *str, va_list ap)
             my_putchar_disp(file, &str[i]);
         }
     }
+    return (0);
 }
 
 int my_printf(FILE *file, char *str, ...)

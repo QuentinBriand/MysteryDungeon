@@ -65,10 +65,9 @@ void deal_dmg(wininf *inf, player *p)
         int dmg = 66666;
         enemy->st.health -= dmg > 0 ? dmg : -dmg;
         sfSound_play(inf->sounds->sounds_board[TAKE_DAMAGE]);
-        add_log(inf, "%s: %d hp. %s %d hp%s\n", inf->lang ? "Infliges" :
-            "Dealt", dmg < 0 ? dmg * -1 : dmg, inf->lang ? "Il lui reste" :
-            "The pokemon got", enemy->st.health > 0 ? enemy->st.health : 0,
-            inf->lang ? "" : " remaining");
+        add_log(inf, COMBAT_FONT_SIZE, "%s: %d hp. %s %d hp\n", inf->lang ? "Infliges" :
+            "Dealt", dmg < 0 ? dmg * -1 : dmg, inf->lang ? "Le pokemon a" :
+            "The pokemon got", enemy->st.health > 0 ? enemy->st.health : 0);
         if (enemy->st.health <= 0) {
             p->can_move = 1; check_death(inf, enemy, p);
         }

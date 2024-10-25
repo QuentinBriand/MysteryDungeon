@@ -8,8 +8,12 @@
 #ifndef MY_H_
     #define MY_H_
 
-    #include <types.h>
-
+    #if defined(__linux__)
+        #include <types.h>
+        #include <unistd.h>
+    #elif defined(_WIN32) || defined(_WIN64)
+        #include <io.h>
+    #endif
 int my_isneg(int nb);
 int my_put_nbr(int nb);
 int my_is_prime(int nb);

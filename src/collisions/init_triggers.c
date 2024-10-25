@@ -80,7 +80,7 @@ void interact_pnj(wininf *win, player *p)
 
 void sleep_and_save(wininf *win, player *p)
 {
-    add_log(win, "Saving...\n");
+    add_log(win, FONT_SIZE, "Saving...\n");
     win->change_scene = 0;
     win->transition = 1;
 }

@@ -5,8 +5,7 @@
 ** my_strdup
 */
 
-#include "rpg.h"
-#include <stdlib.h>
+#include "my.h"
 
 char *my_strdup(char *src, void *(ptr)(size_t t))
 {

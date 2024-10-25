@@ -21,8 +21,8 @@ int print_next_log(wininf *win)
     if (win->dungeon.floor > 5) {
         if (!win->dungeon.ended) {
             win->c_scene = DITTO;
-            add_log(win, "You finished the dungeon !\n");
-            add_log(win, "Well done :DD\n");
+            add_log(win, FONT_SIZE, "You finished the dungeon !\n");
+            add_log(win, FONT_SIZE, "Well done :DD\n");
         }
         win->dungeon.time += win->time.dt;
         win->dungeon.ended = 1;
@@ -35,7 +35,7 @@ int print_next_log(wininf *win)
         }
         return 1;
     } else {
-        add_log(win, "Floor %d\n", win->dungeon.floor);
+        add_log(win, FONT_SIZE, "Floor %d\n", win->dungeon.floor);
     }
     return 0;
 }

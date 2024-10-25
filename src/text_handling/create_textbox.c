@@ -13,7 +13,7 @@ void init_textbox(wininf *win)
     win->ui.background = atlas_to_sprite(r, win->atlases.atlas);
     sfVector2f mid = (sfVector2f) {r.width / 2, r.height / 2};
     sfSprite_setOrigin(win->ui.background, mid);
-    win->ui.font = sfFont_createFromFile("fontt.ttf");
+    win->ui.font = sfFont_createFromFile(rootPath"/fontt.ttf");
     win->ui.dialog = 0;
     win->ui.text_delay = 0.05f;
     load_alphabet(win->ui.font, FONT_SIZE);

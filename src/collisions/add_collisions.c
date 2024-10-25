@@ -25,7 +25,7 @@ void check_if_trigger(char **arr, int i, list **l)
 
 void add_collisions(char *str, list **l)
 {
-    char **arr = my_strtwa(str, ";\n");
+    char **arr = my_strtwa(str, ";\n\r");
     for (int i = 0; arr[i]; i++) {
         if (!my_strcmp(arr[i], "Circle")) {
             add_circle_col(l, my_atoi(arr[i + 1]), my_atoi(arr[i + 2]),

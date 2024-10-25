@@ -26,7 +26,7 @@ void use_item(wininf *inf, player *p)
         p->st.health += my_atoi(arr[2]);
         p->st.health = p->st.health > p->st.max_health ?
         p->st.max_health : p->st.health;
-        add_log(inf, "Healed by: %d, now at %d\n", my_atoi(arr[2]),
+        add_log(inf, COMBAT_FONT_SIZE, "Healed by: %d, now at %d\n", my_atoi(arr[2]),
             p->st.health);
     }
     if (my_strcmp(arr[1], "ATK") == 0) p->st.atk_boost += my_atoi(arr[2]);

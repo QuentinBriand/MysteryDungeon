@@ -15,7 +15,7 @@ void perform_attack_mob(wininf *inf, player *e, player *p)
         p->st.health -= 1;
         if (p->st.health <= 1) p->st.health = 1;
         if (p->st.health <= 0) {
-            add_log(inf, "%s%s\n", YELLOW,
+            add_log(inf, FONT_SIZE, "%s%s\n", YELLOW,
                 inf->lang ? "Je me sens pas bien..." :
                 "I'm not felling well...");
             sfSound_play(inf->sounds->sounds_board[MISSION_FAILURE]);
@@ -24,7 +24,7 @@ void perform_attack_mob(wininf *inf, player *e, player *p)
             inf->next_pos = (sfVector2f){170.0f, 100.0f};
             inf->next_scene = INTERIOR;
         } else {
-            add_log(inf, "%s %d hp\n", inf->lang ? "Aie j'ai pris" :
+            add_log(inf, COMBAT_FONT_SIZE, "%s %d hp\n", inf->lang ? "Aie j'ai pris" :
             "Ouch I took", 1);
         }
     }

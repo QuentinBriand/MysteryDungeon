@@ -51,6 +51,15 @@
     #include <stdarg.h>
     #define APPEND -1
 
+    #if defined(_MSC_VER)
+        #include <BaseTsd.h>
+        typedef SSIZE_T ssize_t;
+    #endif
+
+    #ifndef rootPath
+        #define rootPath "./"
+    #endif
+
 typedef struct map_info map_inf;
 
 typedef enum scenes_e {
@@ -483,7 +492,7 @@ int test_func(wininf *inf, player *p);
 //Others
 void update_rects_dialog(wininf *win);
 //Others
-void add_log(wininf *inf, char *msg, ...);
+void add_log(wininf *inf, const float font_size, char *msg, ...);
 //Others
 void handle_music(wininf *inf, player *p);
 //Others

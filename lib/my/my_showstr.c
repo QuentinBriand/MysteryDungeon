@@ -24,6 +24,7 @@ int check_ascii(char *str, int i)
     if (str[i] < 14) {
         my_putchar('0');
     }
+    return 0;
 }
 
 int my_showstr(char *str)

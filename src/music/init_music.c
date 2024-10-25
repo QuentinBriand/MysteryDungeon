@@ -16,7 +16,7 @@ void set_sound_musics(wininf *inf, int volume)
 s_music *init_musics(void)
 {
     s_music *music = my_malloc(sizeof(s_music));
-    char **csvmusics = load_csv("./csv/music.csv");
+    char **csvmusics = load_csv(rootPath"/csv/music.csv");
     for (int i = 1, j = 0; csvmusics[i] != NULL && j < COUNTMUSICS; i++, j++) {
         char **actualmusic = my_strtwa(csvmusics[i], ";\n");
         music->musics_board[j] = my_music_from_file(actualmusic[0]);

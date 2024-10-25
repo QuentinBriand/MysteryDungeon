@@ -11,7 +11,7 @@ int treat_parsing_balise(char *line, dline_parsing *p, wininf *inf, int *steps)
 {
     int y = 0;
     for (; line[p->r2.left + y] != '>'; y++);
-    char test[y + 1];
+    char *test = malloc((y + 1) * sizeof(char));
     my_strncpy(test, line + p->r2.left + 1, y - 1);
     test[y - 1] = '\0';
     int res = treat_balise(test, &p->current_color, inf);
@@ -25,6 +25,7 @@ int treat_parsing_balise(char *line, dline_parsing *p, wininf *inf, int *steps)
         p->r2.width = p->r2.width + res;
         steps[p->r2.top] = p->r2.width;
     }
+    free(test);
     return 1;
 }
 
