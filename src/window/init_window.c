@@ -58,7 +58,7 @@ wininf create_window_infos(int ac, char **av)
 {
     srand(time(0)); wininf inf; inf.lang = ENGLISH;
     inf.settings = init_settings(); inf.net = init_network();
-//    // get_settings_flags(ac, av, &inf);
+    get_settings_flags(ac, av, &inf);
     inf.mode = (sfVideoMode){1920, 1080, 32};
     sfContextSettings settings = {
         .depthBits = 24,
