@@ -88,9 +88,7 @@ A scene is defined by it's ID defined in the ```enum scenes_e``` defined in ```r
 
 <p align="center">
   <img src="./readme_resources/Home.png" width="400" alt="Home Example"/>
-  A simple example of the HOME scene with :sparkles: Shiny Charmander and the basic FireHouse
 </p>
-
 
 But we need to fill this scene with decorations, for this we have the ```atlas.png```. And since it contains all sprites of the game we can refer to the ```statics.csv``` it defines every static animations. It follows the pattern: ```Name;Left;Top;Width;Height;Max x;Loop Type```, with Loop Type being either 0 or 1 (Linear or cyclic).
 
