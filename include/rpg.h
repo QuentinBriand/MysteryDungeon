@@ -609,7 +609,7 @@ int pos_char(char *string, char *presence);
 //Utility functions
 sfSoundBuffer *my_buffer_from_file(char *path);
 //Utility functions
-char **my_strtwa(char const *str, char *limit);
+char **my_strtwa(char const *str, char const *limit);
 //Utility functions
 char *my_strdup_to_char(char *src, char *delim);
 //Utility functions
